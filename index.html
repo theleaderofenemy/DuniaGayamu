@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Loading Baju</title>
+  <style>
+    body {
+      margin: 0;
+      height: 100vh;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      background-image: url("latar2 (1).jpg");
+      background-size: cover;
+      background-position: auto;
+      background-repeat: no-repeat;
+    }
+
+    .loader-container {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 10em;
+      perspective: 800px;
+    }
+
+    .loader-cube {
+      position: relative;
+      width: 5em;
+      height: 5em;
+      transform-style: preserve-3d;
+      animation: rotateCube 2s infinite linear;
+    }
+
+    .loader-side {
+      position: absolute;
+      width: 5em;
+      height: 5em;
+      border: 0.1em solid #ffffff; /* Relative sizing for border */
+      overflow: hidden;
+    }
+
+    .front {
+      transform: translateZ(2.5em);
+      background: url('baju.png') center/cover;
+    }
+
+    .back {
+      transform: rotateY(180deg) translateZ(2.5em);
+      background: url('jaket.png') center/cover;
+    }
+
+    .right {
+      transform: rotateY(90deg) translateZ(2.5em);
+      background: url('kemeja.png') center/cover;
+    }
+
+    .left {
+      transform: rotateY(-90deg) translateZ(2.5em);
+      background: url('jas.png') center/cover;
+    }
+
+    .top {
+      transform: rotateX(90deg) translateZ(2.5em);
+      background: url('sandal.png') center/cover;
+    }
+
+    .bottom {
+      transform: rotateX(-90deg) translateZ(2.5em);
+      background: url('sepatu.png') center/cover;
+    }
+
+    /* Keyframes for continuous rotation */
+    @keyframes rotateCube {
+      from {
+        transform: rotateX(0deg) rotateY(0deg);
+      }
+      to {
+        transform: rotateX(360deg) rotateY(360deg);
+      }
+    }
+
+    .loading-text {
+      text-align: center;
+      margin-top: 10px;
+      color: #17a2b8;
+      font-size: 16px;
+    }
+  </style>
+</head>
+<body>
+  <div class="loader-container" id="loader-container">
+    <div class="loader-cube">
+      <div class="loader-side front"></div>
+      <div class="loader-side back"></div>
+      <div class="loader-side left"></div>
+      <div class="loader-side right"></div>
+      <div class="loader-side top"></div>
+      <div class="loader-side bottom"></div>
+    </div>
+  </div>
+
+  <div class="loading-text" id="loading-text" style="color:#ffffff;">
+    <b> Sedang menghubungkan . . .</b>
+  </div>
+
+  <script>
+    // Hide the loader and text after 2.5 seconds
+    setTimeout(function() {
+      var loaderContainer = document.getElementById('loader-container');
+      var loadingText = document.getElementById('loading-text');
+
+      loaderContainer.style.display = 'none';
+      loadingText.style.display = 'none';
+
+      // Redirect to file.html
+      window.location.href = 'indeks.html';
+    }, 2500);
+  </script>
+</body>
+</html>

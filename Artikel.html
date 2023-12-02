@@ -1,0 +1,472 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>ARTIKEL | DUNIA GAYAMU</title>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@10"></script>
+    <style>
+        body {
+            background-image: url("latar2 (1).jpg");
+            background-size: cover;
+            background-position: auto;
+            background-repeat: no-repeat;
+        }
+
+        .back-to-top {
+            display: none;
+            position: fixed;
+            bottom: 20px;
+            right: 20px;
+            padding: 10px 20px;
+            border-radius: 4px;
+            background-color: #00000000;
+            color: #00a2ff;
+            text-decoration: none;
+            transition: opacity 0.4s;
+            font-size: 24px;
+        }
+
+        .back-to-top:hover {
+            background-color: #00a2ff;
+            color: #ffffff;
+        }
+
+        nav a:hover {
+            color: #b6d9df !important;
+        }
+
+        .sidebar {
+            display: none;
+            height: 100vh;
+            position: fixed;
+            top: 0;
+            left: 0;
+            background-color: #333;
+            padding: 15px;
+            color: #fff;
+            width: 250px;
+        }
+
+        .btn-group {
+            display: flex;
+            flex-direction: column;
+        }
+
+        .btn-group button {
+            margin-bottom: 10px;
+        }
+        footer.bg-none {
+    background-color: #00000000;
+    color: #fff;
+    text-align: center;
+    padding: 20px;
+    margin: 0 10px;
+}
+
+.text-white {
+    color: #fff;
+}
+
+.text-center {
+    text-align: center;
+}
+.sidebar {
+      display: none;
+      height: 100vh;
+      position: fixed;
+      top: 0;
+      left: 0;
+      background-color: #333;
+      padding: 15px;
+      color: #fff;
+      width: 250px;
+    }
+
+    .btn-group {
+      display: flex;
+      flex-direction: column;
+    }
+
+    .btn-group button {
+      margin-bottom: 10px;
+    }
+    .imgcontainer {
+            text-align: center;
+            margin: 24px 0 12px 0;
+        }
+
+        img.avatar {
+            width: 40%;
+            border-radius: 50%;
+            display: block;
+            margin: 0 auto;
+        }
+        .navbar-nav .nav-item {
+  position: relative;
+}
+
+.navbar-nav .nav-item::after {
+  content: '';
+  position: absolute;
+  width: 100%;
+  height: 2px;
+  background-color: #b6d9df; /* Warna garis bawah saat aktif */
+  bottom: -2px;
+  left: 0;
+  transform: scaleX(0);
+  transition: transform 0.3s;
+}
+
+.navbar-nav .nav-item.active::after {
+  transform: scaleX(1);
+}
+
+  </style>
+  <script>
+    $(document).ready(function () {
+  // Tangkap klik pada setiap tautan navbar
+  $('.navbar-nav a').on('click', function () {
+    // Hapus kelas 'active' dari semua item navbar
+    $('.navbar-nav .nav-item').removeClass('active');
+    
+    // Tambahkan kelas 'active' ke item navbar yang sedang diklik
+    $(this).parent().addClass('active');
+
+    console.log('Link clicked. Active class added:', $(this).parent().hasClass('active'));
+  });
+});
+</script>
+    </style>
+</head>
+<body>
+  <nav class="navbar navbar-expand-lg bg-none fixed-top">
+    <ul class="nav nav-underline">
+        <li class="nav-item">
+          <a class="nav-link active" href="#sidebar" style="font-size: 30px; color: #b6d9df;" onclick="toggleSidebar()"><b>Dunia Gayamu</b></a>
+        </li>
+      </ul>
+    
+      <!-- Sidebar -->
+      <div class="sidebar" id="sidebar">
+        <h5>User Information</h5>
+        <div class="imgcontainer">
+            <img src="https://i.pinimg.com/originals/c6/e9/ed/c6e9ed167165ca99c4d428426e256fae.png" alt="Avatar" class="avatar">
+        </div>
+        <p>Username: admin</p>
+        <p>Password: Password1234</p>
+        <div class="btn-group">
+            <button class="btn btn-secondary" onclick="toggleSidebar()">Back</button>
+            <button class="btn btn-danger" onclick="logout()">Logout</button>
+          </div>
+        </div>
+      <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+      <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.1/dist/umd/popper.min.js"></script>
+      <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+    
+      <script>
+        function toggleSidebar() {
+          var sidebar = document.getElementById("sidebar");
+          if (sidebar.style.display === "none" || sidebar.style.display === "") {
+            sidebar.style.display = "block";
+          } else {
+            sidebar.style.display = "none";
+          }
+        }
+        function logout() {
+  alert('Logout successful!');
+window.location.href = 'Indeks.html';
+
+}
+      </script>
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse justify-content-end" id="navbarNav">
+            <ul class="nav nav-underline">
+                <li class="nav-item">
+                    <a class="nav-link active text-white" href="Artikel.html">Artikel</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link text-white" href="indeks2.html#About">About Us</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link text-white" href="indeks2.html#Product">Product</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link text-white" href="Indeks.html">Log Out</a>
+                  </li>
+            </ul>
+        </div>
+    </nav>
+
+    <br><br><br><div class="custom-div mt-5" style="width: auto; text-align: center; background-color: #ffffff00; color: #b6d9df; margin-top: 60px;">
+        <div class="custom-div-body mt-4 mb-4 ">
+          <h3 class="custom-div-title" style="font-size: 50px;"><u>Welcome to Artikel</u></h3>
+        </div>
+      </div>
+
+      <section id="Baju">
+        <div class="card mt-5 mx-auto mb-5 border-black" style="width:70rem; text-align: center; background-color: rgba(0, 0, 0, 0.5);">
+            <div class="card-body">
+                <div class="container text-center">
+                    <div class="row">
+                        <!--Untuk Keterangan produknya-->
+                        <div class="col-8">
+                            <h3 class="card-title" style="text-align: left;color: #2acae2;"><marquee>BAJU ....... BAJU......Lagi ada Diskon 50%.....</marquee></h3>
+                            <hr style="border-color: rgb(255, 255, 255);">
+                            <p style="color: #ffffff; text-align: left;">&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;Pilihan klasik & serbaguna untuk tampilan sehari-hari. Bahan kaos nyaman memberikan pengalaman berpakaian yang menyenangkan, sambil memastikan sirkulasi udara optimal untuk kenyamanan sepanjang hari, dan dapat digunakan di berbagai kondisi cuaca. Desainnya yang simpel membuatnya mudah dipadu-padankan dengan berbagai pakaian lain. Warna hitam yang dipilih memberikan tampilan yang elegan, sementara siluet rampingnya cocok dengan berbagai warna kulit. Fleksibilitasnya membuatnya pas untuk acara kasual sehari-hari hingga formal santai.</p>
+                            <p style="color: #ffffff; text-align: left;">Merupakan investasi yang baik, karena memiliki daya tahan yang luar biasa dan kesan timeless, sehingga tetap terlihat stylish meski sering dipakai. Dengan kombinasi kenyamanan, gaya, dan ketahanan, pakaian ini menjadi pilihan yang cerdas untuk gaya hidup yang sibuk dan beragam.</p>
+                        </div>
+                        <!--Untuk Gambar Produknya-->
+                        <div class="col-4">
+                            <img src="baju.png" class="card-img-top" alt="..." style="height:290px;">
+                            <div class="overlay-text">
+                                <p style="color: #ffffff;"><del>Price: Rp. 100.000,00</del></p>
+                                <p style="color: #ffc400;font-size: 24px;">Diskon: Rp. 50.000,00</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="d-grid gap-2 col-1 mx-auto">
+                <a href="indeks2.html" class="btn btn-outline-info"><b>Go Back</b></a>
+            </div><BR>
+        </div>
+    </section>
+    
+        
+      <section id="Topi">
+        <div class="card mt-5 mx-auto mb-5 border-black" style="width:70rem ; text-align: center; background-color: rgba(0, 0, 0, 0.5);">
+          <div class="card-body">
+        <div class="container text-center">
+          <div class="row">
+              <!--Untuk Keterangan produknya-->
+            <div class="col-8">
+              <h3 class="card-title" style="text-align: left;color: #17a2b8;"><marquee>TOPI ....... TOPI......Lagi ada Diskon 50%.....</marquee></h3><hr style="border-color: rgb(255, 255, 255);">
+              <p style="color: #ffffff; text-align: left;">&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;Pilihan klasik & serbaguna untuk gaya sehari-hari. Dibuat dari bahan yang nyaman, topi ini memberikan sirkulasi udara optimal, menjadikannya pilihan ideal di berbagai kondisi cuaca. Desainnya yang sederhana memudahkan penataan dengan pakaian lain. Warna hitam memberikan sentuhan elegan, sementara siluetnya yang ramping cocok dengan berbagai warna kulit. Fleksibilitasnya membuatnya cocok untuk berbagai kesempatan, baik kasual maupun formal santai.</p>
+             <p style="color: #ffffff; text-align: left;">Topi ini merupakan investasi yang baik, karena tidak hanya tahan lama tetapi juga memiliki daya tarik yang timeless. Meski sering dipakai, tetap mempertahankan gaya yang stylish. Dengan kombinasi kenyamanan dan gaya yang tahan lama, topi ini menjadi aksesori yang cerdas untuk menambahkan sentuhan fashion dalam kehidupan sehari-hari Anda.</p>
+            </div>
+            <!--Untuk Gamabar Produknya-->
+            <div class="col-4">
+              <img src="topi.png" class="card-img-top" alt="..." style="height:290px ;">
+              <div class="overlay-text">
+              <p style="color: #ffffff;"><del>Price: Rp. 70.000,00</del></p>
+              <p style="color: #ffc400;font-size: 24px;">Diskon: Rp. 35.000,00</p>
+            </div>
+            </div>
+          </div>
+        </div>
+        </div>
+                <div class="d-grid gap-2 col-1 mx-auto">
+                    <a href="indeks2.html" class="btn btn-outline-info"><b>Go Back</b></a>
+              </div><BR>
+        </div>
+    </section>
+        <section id="Kemeja">
+            <div class="card mt-5 mx-auto mb-5 border-black" style="width:70rem ; text-align: center; background-color: rgba(0, 0, 0, 0.5);">
+              <div class="card-body">
+            <div class="container text-center">
+              <div class="row">
+                  <!--Untuk Keterangan produknya-->
+                <div class="col-8">
+                  <h3 class="card-title" style="text-align: left;color: #17a2b8;"><marquee>Kemeja ....... Kemeja......Lagi ada Diskon 50%.....</marquee></h3><hr style="border-color: rgb(255, 255, 255);">
+                  <p style="color: #ffffff; text-align: left;">&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;Pilihan klasik & serbaguna untuk gaya sehari-hari. Kemeja lengan panjang dengan motif kotak-kotak bergaya beerwarna, memadukan warna hitam, abu-abu, dan putih. Dibuat dari bahan kaos yang nyaman, memberikan sirkulasi udara optimal untuk kenyamanan sepanjang hari, cocok di berbagai kondisi cuaca.</p>
+                  <p style="color: #ffffff; text-align: left;">Desainnya yang simpel memudahkan padanan dengan berbagai pakaian. Warna hitam, abu-abu, dan putih memberikan tampilan yang elegan, sementara siluet rampingnya cocok dengan berbagai warna kulit. Fleksibilitasnya membuatnya pas untuk berbagai kesempatan, baik kasual maupun formal santai.</p>
+                  <p style="color: #ffffff; text-align: left;">Kemeja ini merupakan investasi yang baik, karena tidak hanya timeless dalam desainnya tetapi juga tahan lama. Tetap terlihat stylish meski sering dipakai. Dengan kombinasi kenyamanan, gaya, dan daya tahan, kemeja ini menjadi pilihan yang cerdas untuk gaya hidup yang beragam.</p>                  
+                </div>
+                <!--Untuk Gamabar Produknya-->
+                <div class="col-4">
+                  <img src="kemeja.png" class="card-img-top" alt="..." style="height:290px ;">
+                  <div class="overlay-text">
+                  <p style="color: #ffffff;"><del>Price: Rp. 100.000,00</del></p>
+                  <p style="color: #ffc400;font-size: 24px;">Diskon: Rp. 50.000,00</p>
+                </div> 
+                </div>
+              </div>
+            </div>
+            </div>
+                    <div class="d-grid gap-2 col-1 mx-auto">
+                        <a href="indeks2.html" class="btn btn-outline-info"><b>Go Back</b></a>
+                  </div><BR>
+            </div>
+          </section>
+          <section id="Sepatu">
+            <div class="card mt-5 mx-auto mb-5 border-black" style="width:70rem ; text-align: center; background-color: rgba(0, 0, 0, 0.5);">
+              <div class="card-body">
+            <div class="container text-center">
+              <div class="row">
+                  <!--Untuk Keterangan produknya-->
+                <div class="col-8">
+                  <h3 class="card-title" style="text-align: left;color: #17a2b8;"><marquee>Sepatu ....... Sepatu......Lagi ada Diskon.....</marquee></h3><hr style="border-color: rgb(255, 255, 255);">
+                  <p style="color: #ffffff; text-align: left;">&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;Sepatu sneakers ini tidak hanya sekadar alas kaki, tetapi juga pernyataan gaya dan kenyamanan optimal. Desainnya yang modern dan pilihan warna yang menarik mengundang perhatian, sementara sol empuk yang responsif memberikan kenyamanan luar biasa sepanjang hari. Tidak peduli apakah Anda sedang bersiap untuk jalan-jalan santai, latihan fisik, atau pertemuan santai, sneakers ini cocok untuk segala kesempatan. Daya tahan tinggi dan bahan tahan aus menjadikannya teman setia dalam berbagai aktivitas, sementara fleksibilitas dan desain ergonomis memberikan kebebasan gerakan, membuatnya ideal untuk gaya hidup aktif dan bergerak.</p>
+                  <p style="color: #ffffff; text-align: left;">Setiap langkah dengan sepatu ini bukan hanya langkah biasa, melainkan pengalaman nyaman yang tak terlupakan. Dengan material berkualitas tinggi dan perhatian pada detail, sneakers ini tidak hanya memenuhi kebutuhan fungsional, tetapi juga menambah nilai estetika pada penampilan Anda. Jadi, biarkan sepatu sneakers ini menjadi manifestasi gaya pribadi Anda yang tak hanya terlihat trendi tetapi juga mendukung kenyamanan maksimal dalam setiap langkah perjalanan hidup Anda.</p>
+                </div>
+                <!--Untuk Gamabar Produknya-->
+                <div class="col-4">
+                  <img src="sepatu.png" class="card-img-top" alt="..." style="height:290px ;">
+                  <div class="overlay-text">
+                    <p style="color: #ffffff;"><del>Price: Rp. 100.000,00</del></p>
+                  <p style="color: #ffc400;font-size: 24px;">Diskon: Rp. 50.000,00</p>
+                  </div>
+                </div>
+              </div>
+            </div>
+            </div>
+                    <div class="d-grid gap-2 col-1 mx-auto">
+                        <a href="indeks2.html" class="btn btn-outline-info"><b>Go Back</b></a>
+                  </div><BR>
+            </div>
+          </section>
+          <section id="Sandal">
+            <div class="card mt-5 mx-auto mb-5 border-black" style="width:70rem ; text-align: center; background-color: rgba(0, 0, 0, 0.5);">
+              <div class="card-body">
+            <div class="container text-center">
+              <div class="row">
+                  <!--Untuk Keterangan produknya-->
+                <div class="col-8">
+                  <h3 class="card-title" style="text-align: left;color: #17a2b8;"><marquee>Sandal ....... Sandal......Lagi ada Diskon.....</marquee></h3><hr style="border-color: rgb(255, 255, 255);">
+                  <p style="color: #ffffff; text-align: left;">&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;Sandal alas tapak ini bukan hanya sekadar alas kaki, tetapi juga pernyataan gaya dan kenyamanan yang optimal. Desainnya yang modern dengan sandal warna putih dan alas tapak kaki yang berwarna hitam memberikan sentuhan estetika yang menarik perhatian. Sol yang empuk dan responsif memberikan kenyamanan luar biasa sepanjang hari, menjadikan setiap langkah Anda lebih dari sekadar langkah biasa.</p>
+                  <p style="color: #ffffff; text-align: left;">Sandal ini tidak hanya cocok untuk santai di pantai atau bersantai di rumah, tetapi juga untuk aktivitas sehari-hari yang membutuhkan kenyamanan dan gaya. Material tahan aus pada alas tapaknya membuatnya tangguh dalam berbagai kondisi lingkungan, sementara desain ergonomis memberikan kebebasan gerakan untuk mendukung gaya hidup aktif. Dengan kombinasi warna yang kontras antara putih dan hitam, sandal alas tapak ini tidak hanya memenuhi kebutuhan fungsional, tetapi juga menambah nilai estetika pada penampilan santai Anda.</p>
+                </div>
+                <!--Untuk Gamabar Produknya-->
+                <div class="col-4">
+                  <img src="sandal.png" class="card-img-top" alt="..." style="height:290px ;">
+                  <div class="overlay-text">
+                    <p style="color: #ffffff;"><del>Price: Rp. 100.000,00</del></p>
+                  <p style="color: #ffc400;font-size: 24px;">Diskon: Rp. 50.000,00</p>
+                  </div>
+                </div>
+              </div>
+            </div>
+            </div>
+                    <div class="d-grid gap-2 col-1 mx-auto">
+                        <a href="indeks2.html" class="btn btn-outline-info"><b>Go Back</b></a>
+                  </div><BR>
+            </div>
+          </section>
+          <section id="Jas">
+            <div class="card mt-5 mx-auto mb-5 border-black" style="width:70rem ; text-align: center; background-color: rgba(0, 0, 0, 0.5);">
+              <div class="card-body">
+            <div class="container text-center">
+              <div class="row">
+                  <!--Untuk Keterangan produknya-->
+                <div class="col-8">
+                  <h3 class="card-title" style="text-align: left;color: #17a2b8;"><marquee>Jas ....... Jas......Lagi ada Diskon.....</marquee></h3><hr style="border-color: rgb(255, 255, 255);">
+                  <p style="color: #ffffff; text-align: left;">&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;Jas ini bukan hanya sekadar pakaian formal, tetapi juga sebuah pernyataan gaya yang elegan. Dengan warna hitam yang klasik dan kera yang berwarna putih, jas ini menciptakan kontras yang menawan, menambah dimensi pada penampilan Anda. Detail kera yang halus memberikan sentuhan modern pada desain klasik, menghadirkan kombinasi yang sempurna antara tradisional dan kontemporer.</p>
+                  <p style="color: #ffffff; text-align: left;">Material berkualitas tinggi dan perhatian pada detail membuat jas ini tidak hanya cocok untuk acara formal, tetapi juga untuk momen-momen istimewa. Keanggunan warna hitam dan sentuhan kera putih menciptakan harmoni yang elegan, memberikan kesan yang tak terlupakan. Oleh karena itu, biarkan jas berwarna hitam dengan kera putih ini menjadi pilihan utama Anda ketika ingin tampil anggun dan menonjol dalam setiap kesempatan spesial.</p>
+                </div>
+                <!--Untuk Gamabar Produknya-->
+                <div class="col-4">
+                  <img src="jas.png" class="card-img-top" alt="..." style="height:290px ;">
+                  <div class="overlay-text">
+                    <p style="color: #ffffff;"><del>Price: Rp. 100.000,00</del></p>
+                  <p style="color: #ffc400;font-size: 24px;">Diskon: Rp. 50.000,00</p>
+                  </div>
+                </div>
+              </div>
+            </div>
+            </div>
+                    <div class="d-grid gap-2 col-1 mx-auto">
+                        <a href="indeks2.html" class="btn btn-outline-info"><b>Go Back</b></a>
+                  </div><BR>
+            </div>
+          </section>
+          <section id="Jaket">
+            <div class="card mt-5 mx-auto mb-5 border-black" style="width:70rem ; text-align: center; background-color: rgba(0, 0, 0, 0.5);">
+              <div class="card-body">
+            <div class="container text-center">
+              <div class="row">
+                  <!--Untuk Keterangan produknya-->
+                <div class="col-8">
+                  <h3 class="card-title" style="text-align: left;color: #17a2b8;"><marquee>Jaket ....... Jaket......Lagi ada Diskon.....</marquee></h3><hr style="border-color: rgb(255, 255, 255);">
+                  <p style="color: #ffffff; text-align: left;">&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;Jaket ini bukan hanya sebuah pakaian pelindung, tetapi juga sebuah pernyataan gaya yang stylish. Dengan kombinasi warna hitam dan putih, jaket ini menciptakan tampilan yang kontras dan menarik, menghadirkan sentuhan modern yang tak terlewatkan. Desain yang bersih dan sederhana membuatnya cocok untuk berbagai kesempatan, baik santai maupun semi-formal.</p>
+                  <p style="color: #ffffff; text-align: left;">Material berkualitas tinggi memberikan kehangatan dan kenyamanan, sementara kombinasi warna yang timeless memastikan jaket ini tetap modis sepanjang waktu. Kesederhanaan desainnya membuatnya mudah dipadukan dengan berbagai gaya busana, memberikan fleksibilitas yang tinggi dalam penampilan sehari-hari Anda. Dengan jaket hitam putih ini, Anda dapat tampil trendi dan tetap nyaman dalam setiap kegiatan, menjadikannya pilihan yang sempurna untuk gaya hidup dinamis Anda.</p>
+                </div>
+                <!--Untuk Gamabar Produknya-->
+                <div class="col-4">
+                  <img src="jaket.png" class="card-img-top" alt="..." style="height:290px ;">
+                  <div class="overlay-text">
+                    <p style="color: #ffffff;"><del>Price: Rp. 100.000,00</del></p>
+                  <p style="color: #ffc400;font-size: 24px;">Diskon: Rp. 50.000,00</p>
+                  </div>
+                </div>
+              </div>
+            </div>
+            </div>
+                    <div class="d-grid gap-2 col-1 mx-auto">
+                        <a href="indeks2.html" class="btn btn-outline-info"><b>Go Back</b></a>
+                  </div><BR>
+            </div>
+          </section>
+          <section id="Celana">
+            <div class="card mt-5 mx-auto mb-5 border-black" style="width:70rem ; text-align: center; background-color: rgba(0, 0, 0, 0.5);">
+              <div class="card-body">
+            <div class="container text-center">
+              <div class="row">
+                  <!--Untuk Keterangan produknya-->
+                <div class="col-8">
+                  <h3 class="card-title" style="text-align: left;color: #17a2b8;"><marquee>Celana ....... Celana......Lagi ada Diskon.....</marquee></h3><hr style="border-color: rgb(255, 255, 255);">
+                  <p style="color: #ffffff; text-align: left;">&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;Celana kotak ini tidak hanya sekadar pakaian sehari-hari, melainkan sebuah pilihan gaya yang berkelas. Dengan warna hitam sebagai dasar dan motif kotak-kotak berwarna putih pada listnya, celana ini menghadirkan kombinasi yang elegan dan trendi. Desain yang modis membuatnya sesuai untuk berbagai kesempatan, baik santai maupun semi-formal.</p>
+                  <p style="color: #ffffff; text-align: left;">Material berkualitas tinggi memberikan kenyamanan dan keawetan, sementara motif kotak-kotak memberikan sentuhan visual yang menarik dan modern. Celana ini bukan hanya tentang gaya, tapi juga tentang merayakan kebebasan dan kreativitas dalam berbusana. Dengan celana kotak berwarna hitam dan list kotak putih ini, Anda dapat menciptakan tampilan yang unik dan elegan dalam setiap langkah perjalanan gaya Anda.</p>
+                </div>
+                <!--Untuk Gamabar Produknya-->
+                <div class="col-4">
+                  <img src="celana.png" class="card-img-top" alt="..." style="height:290px ;">
+                  <div class="overlay-text">
+                    <p style="color: #ffffff;"><del>Price: Rp. 100.000,00</del></p>
+                  <p style="color: #ffc400;font-size: 24px;">Diskon: Rp. 50.000,00</p>
+                  </div>
+                </div>
+              </div>
+            </div>
+            </div>
+                    <div class="d-grid gap-2 col-1 mx-auto">
+                        <a href="indeks2.html" class="btn btn-outline-info"><b>Go Back</b></a>
+                  </div><BR>
+            </div>
+            <button type="button" class="btn btn-outline-light back-to-top" id="backToTopBtn">
+              <i class="fas fa-arrow-up"></i>
+            </button>
+          
+             <footer class="bg-none text-white text-center py-4">
+              <div class="container">
+                <div class="row">
+                  <div class="col-md-12" style="font-size: 36px;">
+                    <h4 style="color: #ffffff;"><b>Ikuti Kami di Media Sosial</b></h4>
+                              <a href="https://m.facebook.com/yourpage" class="text-white mr-3" target="_blank"><i class="fab fa-facebook"></i></a>
+                              <a href="https://twitter.com/yourpage" class="text-white mr-3" target="_blank"><i class="fab fa-twitter"></i></a>
+                              <a href="https://www.instagram.com/yourpage" class="text-white mr-3" target="_blank"><i class="fab fa-instagram"></i></a>
+                              <a href="https://m.linkedin.com/company/yourpage" class="text-white" target="_blank"><i class="fab fa-linkedin"></i></a>
+                   </div>
+                </div>
+              </div>
+            </footer>
+          <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" crossorigin="anonymous"></script>
+          <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+          <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" crossorigin="anonymous"></script>
+          <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+          
+          <script>
+            $(document).ready(function(){
+              // Show or hide the button based on scroll position
+              $(window).scroll(function(){
+                if ($(this).scrollTop() > 100) {
+                  $('#backToTopBtn').fadeIn();
+                } else {
+                  $('#backToTopBtn').fadeOut();
+                }
+              });
+          
+              // Scroll to top when the button is clicked
+              $('#backToTopBtn').click(function(){
+                $('html, body').animate({scrollTop : 0},800);
+                return false;
+              });
+            });
+          </script>
+</body>
+</html>
